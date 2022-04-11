@@ -1,0 +1,129 @@
+:root {
+    --white: #FFF;
+    --darkgray: #2b2b2b;
+    --purple: #6D1C87;
+    --darkpurple: #3A1845;
+    --lightpurple: #A021C9;
+    --green: #31A81E;
+    --darkgreen: #24561C;
+    --semilightgreen: #38CD20;
+    --lightgreen: #39E31E;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+body {
+    margin: 0;
+    top: 0;
+    background-color: var(--darkgray);
+    color: var(--white);
+    font-family: 'Oxygen', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    border-top: solid 2px var(--lightpurple);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: var(--purple);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+#navbar-brand {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 2px var(--darkpurple);
+}
+
+#navbar-title {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--white);
+}
+
+#navbar-toggle {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 5rem;
+}
+
+.navbar-item {
+    font-size: 2em;
+}
+
+.navbar-item > a {
+    color: var(--white);
+}
+
+@media
+(prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+    section {
+        padding-top: 4em;
+        min-height: calc(100vh - 4em);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #navbar-brand {
+        display: none;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 10rem;
+        height: 100vh;
+        right: 3rem;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-item {
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar-item:hover .navbar-icon {
+        background-color: var(--lightpurple);
+        transition-duration: 1s;
+    }
+
+    .navbar-icon {
+        background-color: var(--darkpurple);
+        transition-duration: 1s;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        text-align:center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .active > .navbar-icon{
+        background-color: var(--purple);
+        transition-duration: 1s;
+    }
+}
