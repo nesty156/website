@@ -15,7 +15,7 @@
             $(document).ready(function(){
                 if (window.matchMedia('(max-width: 992px)').matches) {
                     $("#navbar-toggle,.navbar-item").click(function(){
-                        $(".fa-ul").toggle(1000);
+                        $(".navbar > ul").toggle(1000);
                     });
                 }
 
@@ -57,11 +57,11 @@
                 <a href="#"><span id="navbar-title">Vojtěch Kronika</span></a>
                 <button id="navbar-toggle"><i class="fas fa-bars"></i></button>
             </div>
-            <ul class="fa-ul">
-                <li class="navbar-item active"><span class="fa-li navbar-icon"><i class="fas fa-home"></i></span><a href="#home">Domů</a></li>
-                <li class="navbar-item"><span class="fa-li navbar-icon"><i class="fas fa-user"></i></span><a href="#about">O mně</a></li>
-                <li class="navbar-item"><span class="fa-li navbar-icon"><i class="fas fa-lightbulb"></i></span><a href="#smart-home">Chytrá domácnost</a></li>
-                <li class="navbar-item"><span class="fa-li navbar-icon"><i class="fas fa-address-card"></i></span><a href="#contact">Kontakt</a></li>
+            <ul>
+                <li class="navbar-item active"><span class="navbar-icon"><i class="fas fa-home fa-fw"></i></span><a href="#home"></a><p>Domů</p></li>
+                <li class="navbar-item"><span class="navbar-icon"><i class="fas fa-user fa-fw"></i></span><a href="#about"></a><p>O mně</p></li>
+                <li class="navbar-item"><span class="navbar-icon"><i class="fas fa-lightbulb fa-fw"></i></span><a href="#smart-home"></a><p>Chytrá domácnost</p></li>
+                <li class="navbar-item"><span class="navbar-icon"><i class="fas fa-address-card fa-fw"></i></span><a href="#contact"></a><p>Kontakt</p></li>
             </ul>
         </nav>
         <section id="home">

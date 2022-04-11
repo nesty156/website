@@ -62,8 +62,19 @@ a {
     width: 5rem;
 }
 
+.navbar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
 .navbar-item {
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+.navbar-item > span{
+    padding: 0.5em;
 }
 
 .navbar-item > a {
@@ -90,8 +101,9 @@ a {
     }
 
     .navbar {
+        z-index: 3;
         position: fixed;
-        width: 10rem;
+        width: 30rem;
         height: 100vh;
         right: 3rem;
         background-color: transparent;
@@ -101,29 +113,62 @@ a {
 
     .navbar-item {
         height: 3em;
+        position: relative;
+/*      height: 3em;
         display: flex;
-        justify-content: center;
+        align-items: center;
         flex-direction: column;
-    }
-
-    .navbar-item:hover .navbar-icon {
-        background-color: var(--lightpurple);
-        transition-duration: 1s;
+        align-content: flex-end;
+        gap: 10px; */
     }
 
     .navbar-icon {
+        border-radius: 50%;
         background-color: var(--darkpurple);
         transition-duration: 1s;
-        border-radius: 50%;
-        aspect-ratio: 1;
-        text-align:center;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        float: right;
+    }
+    
+    .navbar-item a {
+        position: absolute;
+        float: right;
+        right: 0;
+        height: 100%;
+        width: 3em;
+    }
+
+    .navbar-item a:hover {
+        width: 100%;
+    }
+
+    .navbar-item a:hover + p {
+        opacity: 1;
+        transition-duration: 1s;
+    }
+
+    .navbar-item p {
+        opacity: 0;
+        position: absolute;
+        top:0;
+        margin: 0;
+        float: right;
+        right: 0;
+        padding: 0.5em;
+        z-index: -3;
+        background-color: var(--lightpurple);
+        border-radius: 1.5em;
+        padding-right: 2.5em;
+        text-transform: uppercase;
+        transition-duration: 1s;
+    }
+
+    .navbar-item:hover .navbar-icon {
+        background-color: var(--purple);
+        transition-duration: 1s;
     }
 
     .active > .navbar-icon{
-        background-color: var(--purple);
+        background-color: var(--lightpurple);
         transition-duration: 1s;
     }
 }
