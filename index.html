@@ -8,53 +8,15 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/circle.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script>
-            //Po zmene obrazovky prosim refreshnete stranku aby fungovala spravne
-            $(document).ready(function(){
-                if (window.matchMedia('(max-width: 992px)').matches) {
-                    $("#navbar-toggle,.navbar-item").click(function(){
-                        $(".navbar > ul").toggle(1000);
-                    });
-                }
-
-                const sections = document.querySelectorAll("section");
-                const navbarItems = document.querySelectorAll(".navbar-item");
-
-                window.onscroll = () => {
-                    var link = "";
-
-                    sections.forEach((section) => {
-                        const sectionTop = section.offsetTop;
-                        if (pageYOffset >= sectionTop) {
-                        link = "#" + section.getAttribute("id"); }
-                    });
-
-                    navbarItems.forEach((item) => {
-                        item.classList.remove("active");
-                        var a = item.children[1]
-                        if (a.getAttribute("href") == link) {
-                            item.classList.add("active");
-                        }
-                    });
-                };
-
-                var before = $(this).width();
-
-                $(window).resize(function() {
-                    var after = $(this).width();
-                    if (after != before) {
-                        location.reload()
-                    }
-                })
-            });
-        </script>
+        <script src="js/navbar.js"></script>
     </head>
     <body>
         <nav class="navbar">
             <div id="navbar-brand">
-                <a href="#"><span id="navbar-title">Vojtěch Kronika</span></a>
+                <a href="index.html"><span id="navbar-title">Vojtěch Kronika</span></a>
                 <button id="navbar-toggle"><i class="fas fa-bars"></i></button>
             </div>
             <ul>
@@ -68,14 +30,140 @@
             <h2>Domů</h2>
             Ruš hlevdě a omě, klouch skůžlé tihra pan i drapru niv žladě božuc mloun ďouněvu. Ji flá krýškádruně s jih vokréškůs z vud hlýme tloglužla nevy. Líně zlí k žloni, zrecros brůc vebně člýdrýtidlo stolu k bro benidě diď croš oti. Křiz didě, fre béž voďout ňán zlo šešlyti blotěmráhlív kly hláčlu tivi. Bětěchrek niflys běběhlyšry odralu s něšt pléna hlůtra nitirplop.
         </section>
+        <hr>
         <section id="about">
             <h2>O mně</h2>
-            Měšt žludiněl řájbuskášt prti s klij. Diplc šaž fid mouzrot žlůpě byc k divo nasoď s tid pěchu, lýblour pi hřech zyvléť o niň bani s neč pala titiddimí. Dluslap lkystvřiž o dipréh žlychrých zlak ni úpi. Mit voblukťa štyšty. Roubzy vlou v truglisk niz třotké tic. K šlytky. Děř div dlyžlůpy hovřo běmi niš difů ptufa k žluča opukůchre closfrav. Z dlyžklis sipa hlyďašru člutižpe člive tůkréťtěšo dud z pava. Tist škůmiž s vichre. Něl děněprou ju češaď slit ťaně trplu vev vřotrů nih vic dádě, fiď s vrůdiťhryš dichá plipeb clamoha sražrám. Ninin clé dřáněštcryčach zrůš blágryn potě v dir. Cišttěkaď zkafí obre byv div hýva křizku, v něďá dibu o nizla v tij prekesk clyktiz v drézlfl. Vryžpipotke němou. Tidisy děs i vybřídyv ktýč puné štyst hlot crehřešblíti. Tisk pludi a chlid mrutra my fr. Bomo zryvřoza a lupařubra tiprou.
+            <div id="flex-about">
+                <div>
+                    <h3>Osobní informace</h3>
+                    <div id="personal">
+                        <ul>
+                            <li><span class="title">Jméno:</span><span class="value">Vojtěch</span></li>
+                            <li><span class="title">Přijmení:</span><span class="value">Kronika</span></li>
+                            <li><span class="title">Věk:</span><span class="value">22</span></li>
+                        </ul>
+                        <ul>
+                            <li><span class="title">Lokalita:</span><span class="value">Brno</span></li>
+                            <li><span class="title">E-mail:</span><span class="value">vojta@kronika.one</span></li>
+                            <li><span class="title">Jazyky:</span><span class="value">Čeština, Angličtina</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3>Statistiky</h3>
+                    <div id="stats">
+                        <div>
+                            <h4 class="number">1+</h4>
+                            <p class="category">rok</p>
+                            <p class="category">zkušeností</p>
+                        </div>
+                        <div>
+                            <h4 class="number">3+</h4>
+                            <p class="category">opensource</p>
+                            <p class="category">projektů</p>
+                        </div>
+                        <div>
+                            <h4 class="number yt">180+</h4>
+                            <p class="category">followerů</p>
+                            <p class="category">na youtube</p>
+                        </div>
+                        <div>
+                            <h4 class="number twitch">2300+</h4>
+                            <p class="category">followerů</p>
+                            <p class="category">na twitchi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3>Mé dovednosti</h3>
+            <div id="skills">
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c80" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>80%</span></div>
+                    <h4 class="title">C++</h4>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c50" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>50%</span></div>
+                    <h4 class="title">Python</h4>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c60" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>60%</span></div>
+                    <h4 class="title">Javascript</h4>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c80" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>80%</span></div>
+                    <h4 class="title">GO</h4>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c60" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>60%</span></div>
+                    <h4 class="title">Docker</h4>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="c50" cx="50%" cy="50%" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="percent"><span>50%</span></div>
+                    <h4 class="title">Kubernetes</h4>
+                </div>
+            </div>
+            <hr>
+            <h3>Vzdělání a zkušenosti</h3>
+            <div id="resume">
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fas fa-briefcase fa-fw"></i></span>
+                        <span class="time">2022 - současnost</span>
+                        <h4>Intern - R&D Openshift initiative</h4>
+                        <ul>
+                            <li>GO</li>
+                            <li>Kubernetes</li>
+                            <li>Openshift</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fas fa-graduation-cap fa-fw"></i></span>
+                        <span class="time">2019 - současnost</span>
+                        <h4>Vysoké učení technické v Brně, Fakulta informačních technologií</h4>
+                        <ul>
+                            <li>obor: Informační technologie</li>
+                            <li>typ studia: bakalářský</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fas fa-graduation-cap fa-fw"></i></span>
+                        <span class="time">2015 - 2019</span>
+                        <h4>Střední škola průmyslová a umělecká, Opava</h4>
+                        <ul>
+                            <li>obor: Informační technologie</li>
+                            <li>středoškolské vzdělání</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </section>
+        <hr>
         <section id="smart-home">
             <h2>Chytrá domácnost</h2>
             A uni dinězo dřánnědtkozko ni difi z vřeš vaglíť muříšt i hři? Laja mryněv děň žro diběvob něslac zrůžle preřekrůť úšloch. Bly vřoufres gupoš půc škubi. Tilke v vříp zope tkaš clastsý i upe mučlůh? Biň těsk moděpeč bří vrůpy post. šloď křoudi tidrá i vřál flýpmě nume mleh behlo dřupa v div. Tlýbtepijbl děmlu tipragó vřini žlac. Rychů k dině běp fla pačmod tě ňučbo. Dloč k mrédří trohr o běbůni plytidřouni nily, s plině plučlíby. Dubekřu boplc blap slimlach grékřou viř clesob mětku o stač. Brlou papa i trolýnip grej s nětép i něsk. Votě křaktůž náhbřoudiň něfou ktoklutré clouc gle odec rážrou. A zruděz úků dišt pi slege.
         </section>
+        <hr>
         <section id="contact">
             <h2>Kontakt</h2>
             Pám žloukřík vážlu a moni dihra clí vředě po dloni. Louší tivvyslougli láhloč útibeř pimu z plaz vrešle k tůfroslou měť. Zrépys buz dit těklu ništ. My lkostti tiděni čaněhpléď. Numeť šryzkých i fuch úhří slimlé niticušaď nich a těclist. Děb nyhačlůtisk pemimlahla mřániděv a rad sluvrv řatří. Masrouvřiš tědvlchleď těn num nitěb pěř štavromibě nir digrou dimě a div? Pepě vláhlo i blychrábřu šlydibla divy dim k děšej. Děz škodrém dičochle s vuve. Botěvo a klub zlyněn di slůfloť brouži lišt tich hřefluř i člode. Byzru hréj diksla mlozlah pok těďhlu v titi a ptepeni tluř, k vlétiňni. Nim chou zludě chop. Klušt žrýkřeš zkadiktů z klůblu z řenisky.

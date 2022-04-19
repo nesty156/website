@@ -1,0 +1,62 @@
+:root {
+    --lightgreen: #39E31E;
+}
+
+.skill {
+    position: relative;
+    z-index: -1;
+}
+
+.skill > h4 {
+    text-align: center;
+}
+
+.percent {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: 3px solid white;
+}
+
+.percent > span {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+circle {
+    top:0;
+    margin: 0;
+    position: absolute;
+    fill: none;
+    stroke: var(--lightgreen);
+    stroke-width: 1em;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 0;
+}
+
+.c50 {
+    stroke-dashoffset: calc(440 - (50) * 440 / 100);
+}
+
+.c60 {
+    stroke-dashoffset: calc(440 - (60) * 440 / 100);
+}
+
+
+.c80 {
+    stroke-dashoffset: calc(440 - (80) * 440 / 100);
+}

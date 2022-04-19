@@ -1,6 +1,9 @@
 :root {
     --white: #FFF;
-    --darkgray: #2b2b2b;
+    --darkgray: #1b1b1b;
+    --darkergeray: #111111;
+    --gray: #2e2e2e;
+    --lightgray: #bebebe;
     --purple: #6D1C87;
     --darkpurple: #3A1845;
     --lightpurple: #A021C9;
@@ -23,9 +26,22 @@ body {
     font-family: 'Oxygen', sans-serif;
 }
 
+body > hr {
+    height: 1px;
+    background-color: var(--lightgreen);
+    border: none;
+}
+
 section {
     min-height: 100vh;
-    border-top: solid 2px var(--lightpurple);
+    /* border-top: solid 2px var(--lightgreen); */
+}
+
+section h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3rem;
 }
 
 a {
@@ -33,7 +49,7 @@ a {
 }
 
 .navbar {
-    background-color: var(--purple);
+    background-color: var(--green);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -46,7 +62,7 @@ a {
     position: relative;
     display: flex;
     justify-content: center;
-    border-bottom: solid 2px var(--darkpurple);
+    border-bottom: solid 2px var(--darkgreen);
 }
 
 #navbar-title {
@@ -93,9 +109,39 @@ a {
         padding-top: 4em;
         min-height: calc(100vh - 4em);
     }
+
+    .navbar > ul {
+        display: none;
+    }
+
+    .navbar-item {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        transition-duration: 0.5s;
+    }
+
+    .navbar-item:hover {
+        background-color: var(--darkgreen);
+        transition-duration: 0.5s;
+    }
+
+    .navbar-item a {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 992px) {
+    section {
+        padding-right: 6rem;
+        padding-left: 1rem;
+    }
+
     #navbar-brand {
         display: none;
     }
@@ -105,7 +151,7 @@ a {
         position: fixed;
         width: 30rem;
         height: 100vh;
-        right: 3rem;
+        right: 2rem;
         background-color: transparent;
         display: flex;
         justify-content: center;
@@ -114,17 +160,11 @@ a {
     .navbar-item {
         height: 3em;
         position: relative;
-/*      height: 3em;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        align-content: flex-end;
-        gap: 10px; */
     }
 
     .navbar-icon {
         border-radius: 50%;
-        background-color: var(--darkpurple);
+        background-color: var(--darkgreen);
         transition-duration: 1s;
         float: right;
     }
@@ -155,7 +195,7 @@ a {
         right: 0;
         padding: 0.5em;
         z-index: -3;
-        background-color: var(--lightpurple);
+        background-color: var(--lightgreen);
         border-radius: 1.5em;
         padding-right: 2.5em;
         text-transform: uppercase;
@@ -163,12 +203,179 @@ a {
     }
 
     .navbar-item:hover .navbar-icon {
-        background-color: var(--purple);
+        background-color: var(--green);
         transition-duration: 1s;
     }
 
     .active > .navbar-icon{
-        background-color: var(--lightpurple);
+        background-color: var(--lightgreen);
         transition-duration: 1s;
+    }
+}
+
+#personal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#personal ul {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    list-style-type: none;
+    width: 50%;
+}
+
+#personal ul > li{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+}
+
+#personal .title {
+    color: var(--lightgray);
+    margin: 0em 1em 0em 0em;
+}
+
+#personal .value {
+    margin: 0em 1em 0em 0em;
+}
+
+#stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 2fr));
+    grid-template-rows: repeat(2, minmax(150px, 2fr));
+}
+
+#stats div {
+    margin: 1em;
+    padding: 1em;
+    border: 2px solid var(--lightgray);
+    border-radius: 0.5em;
+}
+
+#stats div h4 {
+    margin: 0em 2rem 0em 2rem;
+    color: var(--lightgreen);
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+#stats div h4.yt {
+    color: red;
+}
+
+#stats div h4.twitch {
+    color: rgb(100, 65, 165)
+}
+
+#stats div p {
+    margin: 0em 2rem 0em 2rem;
+    text-transform: uppercase;
+}
+
+#skills {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, minmax(150px, 2fr));
+    grid-template-rows: repeat(2, minmax(150px, 2fr));
+}
+
+#resume {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#resume > ul{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    list-style-type: none;
+}
+
+#resume > ul > li{
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    padding: 2em;
+    border-left: 1px solid var(--lightgray);
+    position: relative;
+}
+
+#resume > ul > li > ul{
+    margin: 0;
+    padding-left: 1em;
+    top: 0;
+}
+
+.icon {
+    position: absolute;
+    top: -1em;
+    left: -1.1em;
+    font-size: 1.5em;
+    background-color: var(--green);
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.time {
+    position: absolute;
+    top: -0.3em;
+    left: 2.5em;
+    font-size: 0.75em;
+    background-color: var(--gray);
+    padding: 0.2em;
+    border-radius: 1em;
+    text-transform: uppercase;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #skills {
+        grid-template-columns: repeat(3, minmax(150px, 2fr));
+        grid-template-rows: repeat(2, minmax(150px, 2fr));
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #personal ul > li{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #flex-about {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #flex-about > div {
+        width: 100%;
+    }
+
+    #skills {
+        grid-template-columns: repeat(4, minmax(150px, 2fr));
+        grid-template-rows: repeat(2, minmax(150px, 2fr));
+    }
+
+    #resume {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #resume > ul{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    section {
+        width: 1200px;
+        margin: auto;
     }
 }
