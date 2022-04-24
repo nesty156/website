@@ -79,6 +79,9 @@ a {
     right: 0;
     height: 100%;
     width: 5rem;
+    background-color: inherit;
+    border: none;
+    color: var(--white);
 }
 
 .navbar > ul {
@@ -105,6 +108,17 @@ a {
   html {
     scroll-behavior: smooth;
   }
+}
+
+@media only screen and (max-width: 576px) {
+    #navbar-title {
+        margin-right: 5rem;
+        font-size: 2em;
+    }
+
+    #navbar-brand {
+        margin-left: 0.5em;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -287,6 +301,21 @@ a {
     text-transform: uppercase;
 }
 
+@media only screen and (max-width: 576px) {
+    #stats div {
+        margin: 1em;
+        padding: 0em;
+    }
+
+    #stats div h4 {
+        margin: 0em 1rem 0em 1rem;
+    }
+
+    #stats div p {
+        margin: 0em 1rem 0em 1rem;
+    }
+}
+
 #skills {
     display: grid;
     justify-items: center;
@@ -443,14 +472,31 @@ a {
 }
 
 #footer {
+    padding-top: 0.5em;
+    height: 7em;
     z-index: 4;
-    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: var(--darkergeray);
     color: var(--white);
     text-align: center;
+    position: relative;
+}
+
+#footer a {
+    position: relative;
+}
+
+#contact {
+    min-height: calc(100vh - 7.5em);
+}
+
+@media only screen and (max-width: 992px) {
+    #contact {
+        padding-top: 4em;
+        min-height: calc(100vh - 11.5em);
+    }
 }
 
 span.linkedin {
